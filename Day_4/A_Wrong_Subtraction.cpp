@@ -6,6 +6,6 @@ using namespace std;
 
 int main()
 {
-    
+    // device check
     return 0;
 }
