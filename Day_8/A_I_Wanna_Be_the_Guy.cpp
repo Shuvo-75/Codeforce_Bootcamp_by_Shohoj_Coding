@@ -25,20 +25,5 @@ int main()
         cin >> new_arr[i];
     }
 
-    set<int> store;  
-
-    vector<int> merge = arr; 
-    merge.insert(merge.end(), new_arr.begin(), new_arr.end());
-
-    for(int c : merge)
-    {
-        store.insert(c);
-    }
-
-    if(store.size() == t)
-        cout << "I become the guy." << endl;
-    else
-        cout << "Oh, my keyboard!" << endl;
-
-    return 0;
+    
 }
