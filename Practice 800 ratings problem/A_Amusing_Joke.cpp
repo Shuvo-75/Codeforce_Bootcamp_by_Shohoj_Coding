@@ -13,15 +13,19 @@ int main()
     cin >> mix_up; 
 
     vector<char> store; 
-    for(int i = 0; i < guest.size(); i++)
-    {
-        store.push_back(guest[i]); 
-    }
 
-    for(int i = 0; i < host.size(); i++)
-    {
-        store.push_back(host[i]); 
-    }
+    store.insert(store.end(), guest.begin(), guest.end());
+    store.insert(store.end(), host.begin(), host.end());
+
+    // for(int i = 0; i < guest.size(); i++)
+    // {
+    //     store.push_back(guest[i]); 
+    // }
+
+    // for(int i = 0; i < host.size(); i++)
+    // {
+    //     store.push_back(host[i]); 
+    // }
 
     vector<char> combine_store; 
     for(auto &c : mix_up)
@@ -31,8 +35,7 @@ int main()
     sort(store.begin(), store.end()); 
     sort(combine_store.begin(), combine_store.end()); 
 
-    if(store == combine_store
-    )
+    if(store == combine_store)
     {
         cout << "YES" << endl; 
     }else
