@@ -15,7 +15,9 @@ int main()
     }
 
     vector<int> new_stock(stock.begin(), stock.end()); 
+    
     sort(new_stock.begin(), new_stock.end()); 
+
     new_stock.erase(unique(new_stock.begin(), new_stock.end()), new_stock.end());
     
     int divisable_value = -1; 
