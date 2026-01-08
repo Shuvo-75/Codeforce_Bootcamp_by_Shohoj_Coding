@@ -15,41 +15,30 @@ int main()
         cin >> arr[i]; 
     }
 
-    // for(int i = 0; i < n; i++)
-    // {
-    //     int value = arr[i]; 
+    unordered_map<int, int> first_index; 
+    vector<int> unique_value; 
 
-    //     if(arr)
-    // }
-
-    // map<int, int> store; 
-    map<int, bool> store;  
-
-    for(int c : arr)
-    {
-        store[c] = true;
-    }
-
-    vector<int> new_store; 
     for(int i = 0; i < n; i++)
     {
-        int value = arr[i]; 
-        
-        if(store.find(value) == store.end())
+        if(first_index.find(arr[i]) == first_index.end())
         {
-            new_store.push_back(value); 
+            first_index[arr[i]] = i; 
+            unique_value.push_back(arr[i]); 
         }
     }
 
-    int size = new_store.size(); 
-    if(size == k)
+    if(k <= unique_value.size())
     {
-        cout << "Yes" << endl; 
-        for(int c : new_store)
+        cout << "YES" << endl; 
+        for (int i = 0; i < k; i++)
         {
-            cout << c << " "; 
+            cout << first_index[unique_value[i]] + 1 << " "; 
         }
+        
     }else
-        cout << "No" << endl; 
+    {
+        cout << "NO" << endl; 
+    }
+
     return 0;
 }
