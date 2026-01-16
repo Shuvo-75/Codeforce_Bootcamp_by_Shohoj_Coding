@@ -12,11 +12,13 @@ int main()
     {
         long long x;
         cin >> x;
+        long long eat = 0; 
         long long slice = 0; 
         while (x >= 3)
         {
-            x/= 3; 
-            slice += x; 
+            eat = x/3; 
+            slice += eat; 
+            x = x - eat - eat; 
         }
 
         cout << slice << endl;
